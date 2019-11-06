@@ -1,25 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Wand</title>
-   </head>
-   <body>
-      <header>
-         <h2>Weather Wand</h2>
-      </header>
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+  /**
+   * Sample JavaScript code for search.cse.list
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
 
-      <form>
-         Search Bar:<br>
-         <input type="text" id="search" name="SearchBar" value="Type Something...">
-         <br><br>
-         <input type="submit" value="Submit">
-      </form>
-
-      <script src="jquery-3.4.1.min.js"></script>
-      <script src=""></script>
-      <script src="https://apis.google.com/js/api.js?onload=init"></script>
-   </body>
-</html>
+  function loadClient() {
+    gapi.client.setApiKey("AIzaSyDeK-20S_t_t-Q8aO1815DVuATW1YHjEvA");
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/customsearch/v1/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded before calling this method.
+  function execute() {
+    return gapi.client.search.cse.list({
+      "q": "umbrella",
+      "cx": "012123320383898428184:hmfuaqhzbru",
+      "num": 1
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client");
+</script>
+<button onclick="loadClient()">load</button>
+<button onclick="execute()">execute</button>
