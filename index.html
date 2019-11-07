@@ -21,11 +21,21 @@
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
+                //console.log("Response", response);
+                //var results = response.result;
               },
               function(err) { console.error("Execute error", err); });
   }
   gapi.load("client");
 </script>
+<body>
+  <div>
+    <!-- accessing search engine -->
+    <script async src="https://cse.google.com/cse.js?cx=012123320383898428184:hmfuaqhzbru"></script>
+    <!-- Search Results Box -->
+    <div class="gcse-searchresults-only"></div>
+  </div>
+</body>
+
 <button onclick="loadClient()">load</button>
 <button onclick="execute()">execute</button>
