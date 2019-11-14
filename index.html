@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
     <style>
+      .header {
+        text-align: center;
+        padding: 20px;
+      }
+      
       .URL {
         color: green;
       }
@@ -24,33 +29,57 @@
     </script>
   </head>
   <body>
+    <header>
+      <h1 class="header">Weather Wand</h1>
+    </header>
     <!-- SearchBar and Search Button -->
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Item to search" aria-label="Recipient's username" aria-describedby="button-addon2" id="Search-Bar">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearBox('search-results');loadClient()">Search</button>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Item to search" aria-label="Recipient's username" aria-describedby="button-addon2" id="Search-Bar">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearBox('search-results');loadClient()">Search</button>
+                </div>
+              </div>
+        </div>
       </div>
     </div>
     <!-- Checkboxes for the possible sites to search -->
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="Amazon-Box" value="Amazon">
-      <label class="form-check-label" for="inlineCheckbox1">Amazon</label>
+    <div class="container">
+      <div class="row">
+        <header>
+          <h4>Sites</h4>
+        </header>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Amazon-Box" value="Amazon">
+                <label class="form-check-label" for="inlineCheckbox1">Amazon</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="eBay-Box" value="eBay">
+                <label class="form-check-label" for="inlineCheckbox2">eBay</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Etsy-Box" value="Etsy">
+                <label class="form-check-label" for="inlineCheckbox2">Etsy</label>
+              </div>
+        </div>
+      </div>
     </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="eBay-Box" value="eBay">
-      <label class="form-check-label" for="inlineCheckbox2">eBay</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="Etsy-Box" value="Etsy">
-      <label class="form-check-label" for="inlineCheckbox2">Etsy</label>
+    <div>
+      <br>
     </div>
     <!-- Box containing the results of the search -->
     <div class="container px-lg-5">
       <div class="row mx-lg-n5">
-        <div class="col py-3 px-lg-5 border bg-light" id="search-results"></div>
+        <div class="col py-3 px-lg-5 border bg-light" id="box1">
+          <div data-spy="scroll" id="search-results"></div>
+        </div>
         <div class="col py-3 px-lg-5 border bg-light">YouTube Videos</div>
       </div>
     </div>
-    <!--<div id="search-results"></div>-->
   </body>
 </html>
