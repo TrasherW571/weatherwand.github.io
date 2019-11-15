@@ -1,5 +1,5 @@
 
-    var YTkey = [AIzaSyDkaJ7oNGZzi6iRI5-D4d1efXIk7Gp-z8w];
+    var YTkey = 'AIzaSyDkaJ7oNGZzi6iRI5-D4d1efXIk7Gp-z8w';
     var YTURL = '//www.googleapis.com/youtube/v3/search';
 
 
