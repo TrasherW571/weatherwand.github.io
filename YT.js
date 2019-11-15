@@ -1,29 +1,38 @@
 
-    var YTkey = 'AIzaSyDkaJ7oNGZzi6iRI5-D4d1efXIk7Gp-z8w';
-    var YTURL = '//www.googleapis.com/youtube/v3/search';
+    var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
+    var YTURL = "//www.googleapis.com/youtube/v3/search";
 
 
     var options = {
-        part: 'snippet',
+        part: "snippet",
         maxResults: 2,
-			  q: document.getElementById("Search-Bar").value,
-				key: YTkey
+                order: "relevance",
+                type: "video",
+              q: "",
+                key: YTkey
     }
 
-    loadVids();
-
     function loadVids() {
+                var checkAmazon = document.getElementById("Amazon-Box").checked;
+                var checkEbay = document.getElementById("eBay-Box").checked;
+                var checkEtsy = document.getElementById("Etsy-Box").checked;                    
+            
+                var search = document.getElementById("Search-Bar").value;
+                options.q = search;
         $.getJSON(YTURL, options, function (data) {
-            var id = data.items[0].snippet.resourceId.videoId;
-						console.log('here');
-						console.log(data);
-            mainVid(id);
-            //resultsLoop(data);
+                        console.log("here");
+                        console.log(data);
+                    if ((search.replace(/\s/g, '').length) && (checkAmazon || checkEbay || checkEtsy)){
+                        data.items.forEach(addVid);
+                    }
+            
         });
     }
 
-    function mainVid(id) {
-        $('.video-results').html(`
-					<iframe width="400" height="300" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				`);
+    function addVid(item, index) {
+            var id = item.id.videoId;
+            console.log(id);
+            document.getElementById("video-results").innerHTML += `
+                    <iframe width="400" height="300" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                `
     }
