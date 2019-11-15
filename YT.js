@@ -33,6 +33,6 @@
             var id = item.id.videoId;
             console.log(id);
             document.getElementById("video-results").innerHTML += `
-                    <iframe width="400" height="300" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="400" height="225" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 `
     }
