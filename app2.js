@@ -202,6 +202,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
       var condition = d.weather[0].id;
       console.log(condition);
       if (condition >= 800 && condition <= 802) {
+        console.log("inside condition 800");
         document.getElementById('result').innerHTML = 'Prada Sunglasses';
         searchRequest = 'Prada Sunglasses';
         console.log(searchRequest);
