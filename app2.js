@@ -145,8 +145,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
                 var checkEbay = document.getElementById("eBay-Box").checked;
                 var checkEtsy = document.getElementById("Etsy-Box").checked;
 
-                var search = document.getElementById("Search-Bar").value;
-                options.q = search;
+                options.q = searchRequest;
         $.getJSON(YTURL, options, function (data) {
                         console.log("here");
                         console.log(data);
