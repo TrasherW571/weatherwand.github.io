@@ -203,20 +203,20 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
       console.log(condition);
       if (condition >= 800 && condition <= 802) {
         console.log("inside condition 800");
-        document.getElementById('result').innerHTML = "Prada Sunglasses";
+        //document.getElementById('result').innerHTML = "Prada Sunglasses";
         searchRequest = "Prada Sunglasses";
         console.log(searchRequest);
         //loadClient();
         executeSetUp();
       } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
-        document.getElementById('result').innerHTML = "Betterbrella";
+        //document.getElementById('result').innerHTML = "Betterbrella";
         searchRequest = "Betterbrella";
         console.log(searchRequest);
         //loadClient();
         executeSetUp();
       } else if (condition == 611) {
-        document.getElementById('result').innerHTML = "Security Chain Company ZT741";
+        //document.getElementById('result').innerHTML = "Security Chain Company ZT741";
         searchRequest = "Security Chain Company ZT741";
         console.log(searchRequest);
         //loadClient();
@@ -228,36 +228,36 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
         //loadClient();
         executeSetUp();
       } else if (condition >= 612 && condition <= 622) {
-        document.getElementById('result').innerHTML = 'L.L. Bean Boots';
+        //document.getElementById('result').innerHTML = 'L.L. Bean Boots';
         searchRequest = "L.L. Bean Boots";
         console.log(searchRequest);
         //loadClient();
         executeSetUp();
       } else if ((condition >= 210 && condition <= 221) || condition == 771 || condition == 781) {
-        document.getElementById('result').innerHTML = 'Ready American Emergency Kit';
+        //document.getElementById('result').innerHTML = 'Ready American Emergency Kit';
         searchRequest = "Ready American Emergency Kit";
         console.log(searchRequest);
         executeSetUp();
       } else if (condition == 701 || condition == 741) {
-        document.getElementById('result').innerHTML = 'Streamlight Strion';
+        //document.getElementById('result').innerHTML = 'Streamlight Strion';
         searchRequest = "Streamlight Strion";
         console.log(searchRequest);
         //loadClient();
         executeSetUp();
       } else if (condition == 731 || condition == 751) {
-        document.getElementById('result').innerHTML = 'Global Industrial Goggles';
+        //document.getElementById('result').innerHTML = 'Global Industrial Goggles';
         searchRequest = "Global Industrial Goggles";
         console.log(searchRequest);
         //loadClient();
         executeSetUp();
       } else if (condition == 731 || condition == 751 || condition == 761 || condition == 762) {
-        document.getElementById('result').innerHTML = '3M Half Facepiece Respirator';
+        //document.getElementById('result').innerHTML = '3M Half Facepiece Respirator';
         searchRequest = "3M Half Facepiece Respirator";
         console.log(searchRequest);
         //loadClient();
         executeSetUp();
       } else {
-        document.getElementById('result').innerHTML = 'Unaccounted for condition';
+        //document.getElementById('result').innerHTML = 'Unaccounted for condition';
         searchRequest = "Unaccounted for condition";
         console.log(searchRequest);
         //loadClient();
