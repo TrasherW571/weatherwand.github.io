@@ -169,6 +169,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
     const key = '33783ab49aa36c8ef3edfe2e994386a1';
     var cond;
     var cityInput = document.getElementsByName("Search-Bar").value;
+    console.log(cityInput);
 
     function weatherBallon(city) {
       console.log('entered weather balloon');
