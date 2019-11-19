@@ -50,36 +50,36 @@ function executeSetUp() {
   }
   else if (checkAmazon && checkEbay && checkEtsy) {
     numOfResults = 3;
-    executeRequest(amazonCX, spanId, searchRequest);
-    executeRequest(ebayCX, spanId, searchRequest);
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId);
+    executeRequest(ebayCX, spanId);
+    executeRequest(etsyCX, spanId);
   }
   else if (selectAmazon_Ebay) {
     numOfResults = 5;
-    executeRequest(amazonCX, spanId, searchRequest);
-    executeRequest(ebayCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId);
+    executeRequest(ebayCX, spanId);
   }
   else if (selectAmazon_Etsy) {
     numOfResults = 5;
-    executeRequest(amazonCX, spanId, searchRequest);
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId);
+    executeRequest(etsyCX, spanId);
   }
   else if (selectEbay_Etsy) {
     numOfResults = 5;
-    executeRequest(ebayCX, spanId, searchRequest);
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(ebayCX, spanId);
+    executeRequest(etsyCX, spanId);
   }
   else if (checkAmazon) {
     numOfResults = 10;
-    executeRequest(amazonCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId);
   }
   else if (checkEbay) {
     numOfResults = 10;
-    executeRequest(ebayCX, spanId, searchRequest);
+    executeRequest(ebayCX, spanId);
   }
   else if (checkEtsy) {
     numOfResults = 10;
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(etsyCX, spanId);
   }
   else {
     alert("Please select a store filter option");
@@ -88,7 +88,7 @@ function executeSetUp() {
 
 
 // Calls the CSE API to search for our request
-function executeRequest(cx, spanId, searchRequest) {
+function executeRequest(cx, spanId) {
   console.log('search request =' + searchRequest);
   var request = gapi.client.search.cse.list({
     "q": searchRequest,
