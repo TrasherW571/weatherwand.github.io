@@ -95,6 +95,7 @@ function executeRequest(cx, spanId) {
     "cx": cx,
     "num": 10
   });
+  console.log(request);
   request.execute(function(response) {
   // Handle the results here (response.result has the parsed body).
   console.log("Response" + response.result);
@@ -168,8 +169,8 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
     const key = '33783ab49aa36c8ef3edfe2e994386a1';
     var cond;
-    var cityInput = document.getElementsByName("Search-Bar").value;
-    console.log(cityInput);
+    //var cityInput = document.getElementsByName("Search-Bar").value;
+    //console.log(cityInput);
 
     function weatherBallon(city) {
       console.log('entered weather balloon');
