@@ -172,7 +172,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
     function weatherBallon(city) {
       console.log('entered weather balloon');
-      fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key)
+      fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key)
           .then(function (resp) { return resp.json() }) // Convert data to json
           .then(function (data) {
               //drawWeather(data);
