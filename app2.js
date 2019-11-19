@@ -7,6 +7,7 @@ var searchRequest;
 
 // Loads our Client
 function loadClient() {
+  console.log('entered load client');
   gapi.client.setApiKey("AIzaSyDeK-20S_t_t-Q8aO1815DVuATW1YHjEvA");
   return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/customsearch/v1/rest")
     .then(
@@ -149,7 +150,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
         $.getJSON(YTURL, options, function (data) {
                         console.log("here");
                         console.log(data);
-                    if ((search.replace(/\s/g, '').length) && (checkAmazon || checkEbay || checkEtsy)){
+                    if ((searchRequest) && (checkAmazon || checkEbay || checkEtsy)){
                         data.items.forEach(addVid);
                     }
 
@@ -169,6 +170,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
     var cityInput = document.getElementsByName("textbox1").value;
 
     function weatherBallon(city) {
+      console.log('entered weather balloon');
       fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key)
           .then(function (resp) { return resp.json() }) // Convert data to json
           .then(function (data) {
