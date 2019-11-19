@@ -160,7 +160,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
     function addVid(item, index) {
             var id = item.id.videoId;
-            console.log(id);
+            //console.log(id);
             document.getElementById("video-results").innerHTML += `
                     <iframe width="400" height="225" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 `
