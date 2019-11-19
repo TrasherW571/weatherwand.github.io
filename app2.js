@@ -149,8 +149,8 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
                 options.q = searchRequest;
         $.getJSON(YTURL, options, function (data) {
-                        console.log("here");
-                        console.log(data);
+                        //console.log("here");
+                        //console.log(data);
                     if ((searchRequest) && (checkAmazon || checkEbay || checkEtsy)){
                         data.items.forEach(addVid);
                     }
