@@ -216,6 +216,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
       } else if (condition >= 600 && condition <= 602) {
         //document.getElementById('result').innerHTML = 'North Face Jacket';
         searchRequest = 'North Face Jacket';
+        loadVids();
       } else if (condition >= 612 && condition <= 622) {
         //document.getElementById('result').innerHTML = 'L.L. Bean Boots';
         searchRequest = 'L.L. Bean Boots';
