@@ -4,7 +4,6 @@ var numOfResults;
 var resultCount;
 var searchRequest;
 
-
 // Loads our Client
 function loadClient() {
   gapi.client.setApiKey("AIzaSyDeK-20S_t_t-Q8aO1815DVuATW1YHjEvA");
@@ -18,16 +17,12 @@ function loadClient() {
         );
 }
 
-
 // Make sure the client is loaded before calling this method.
 function executeSetUp() {
   // Our Search Engine ID's
   var amazonCX = "012123320383898428184:hkj7q3zqvnn";
   var ebayCX = "012123320383898428184:rvjiwhzwqmm";
   var etsyCX = "012123320383898428184:hmfuaqhzbru";
-
-  // getting value from searchbar
-  //var searchRequest = document.getElementById("Search-Bar").value;
 
   // console.log("Searched For: " + searchRequest);
 
@@ -169,32 +164,16 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
     const key = '33783ab49aa36c8ef3edfe2e994386a1';
     var cond;
-    var cityInput = document.getElementsByName("textbox1").value;
 
     function weatherBallon(city) {
       fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key)
           .then(function (resp) { return resp.json() }) // Convert data to json
           .then(function (data) {
-              //drawWeather(data);
               getItem(data);
             })
           .catch(function () {
               // catch any errors
             });
-    }
-
-
-    function drawWeather(d) {
-      var celsius = Math.round(parseFloat(d.main.temp) - 273.15);
-      var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
-      var description = d.weather[0].description;
-      cond = d.weather[0].id;
-      var item;
-
-      document.getElementById('description').innerHTML = description;
-      document.getElementById('temp').innerHTML = fahrenheit + '°';
-      document.getElementById('location').innerHTML = d.name;
-      document.getElementById('condition').innerHTML = cond;
     }
 
     function getItem(d) {
@@ -233,6 +212,4 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
       }
     }
 
-
 gapi.load("client");
-
