@@ -13,7 +13,7 @@ function loadClient() {
     .then(
       function() {
         console.log("GAPI client loaded for API");
-        executeSetUp();
+        //executeSetUp();
         },
         function(err) { console.error("Error loading GAPI client for API", err); }
         );
@@ -202,43 +202,53 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
       if (condition >= 800 && condition <= 802) {
         document.getElementById('result').innerHTML = 'Prada Sunglasses';
         searchRequest = 'Prada Sunglasses';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
         document.getElementById('result').innerHTML = 'Betterbrella';
         searchRequest = 'Betterbrella';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if (condition == 611) {
         document.getElementById('result').innerHTML = 'Security Chain Company ZT741';
         searchRequest = 'Security Chain Company ZT741';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if (condition >= 600 && condition <= 602) {
         document.getElementById('result').innerHTML = 'North Face Jacket';
         searchRequest = 'North Face Jacket';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if (condition >= 612 && condition <= 622) {
         document.getElementById('result').innerHTML = 'L.L. Bean Boots';
         searchRequest = 'L.L. Bean Boots';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if ((condition >= 210 && condition <= 221) || condition == 771 || condition == 781) {
         document.getElementById('result').innerHTML = 'Ready American Emergency Kit';
         searchRequest = 'Ready American Emergency Kit';
+        executeSetUp();
       } else if (condition == 701 || condition == 741) {
         document.getElementById('result').innerHTML = 'Streamlight Strion';
         searchRequest = 'Streamlight Strion';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if (condition == 731 || condition == 751) {
         document.getElementById('result').innerHTML = 'Global Industrial Goggles';
         searchRequest = 'Global Industrial Goggles';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else if (condition == 731 || condition == 751 || condition == 761 || condition == 762) {
         document.getElementById('result').innerHTML = '3M Half Facepiece Respirator';
         searchRequest = '3M Half Facepiece Respirator';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       } else {
         document.getElementById('result').innerHTML = 'Unaccounted for condition';
         searchRequest = 'Unaccounted for condition';
-        loadClient();
+        //loadClient();
+        executeSetUp();
       }
     }
 
