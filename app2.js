@@ -89,6 +89,7 @@ function executeSetUp() {
 
 // Calls the CSE API to search for our request
 function executeRequest(cx, spanId, searchRequest) {
+  console.log('search request =' + searchRequest);
   var request = gapi.client.search.cse.list({
     "q": searchRequest,
     "cx": cx,
