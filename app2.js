@@ -198,6 +198,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
     }
 
     function getItem(d) {
+      console.log("inside get item");
       var condition = d.weather[0].id;
       if (condition >= 800 && condition <= 802) {
         document.getElementById('result').innerHTML = 'Prada Sunglasses';
