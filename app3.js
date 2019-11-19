@@ -4,6 +4,7 @@ var numOfResults;
 var resultCount;
 var searchRequest;
 
+
 // Loads our Client
 function loadClient() {
   gapi.client.setApiKey("AIzaSyDeK-20S_t_t-Q8aO1815DVuATW1YHjEvA");
@@ -17,6 +18,7 @@ function loadClient() {
         );
 }
 
+
 // Make sure the client is loaded before calling this method.
 function executeSetUp() {
   // Our Search Engine ID's
@@ -24,7 +26,7 @@ function executeSetUp() {
   var ebayCX = "012123320383898428184:rvjiwhzwqmm";
   var etsyCX = "012123320383898428184:hmfuaqhzbru";
 
-   // getting value from searchbar
+  // getting value from searchbar
   //var searchRequest = document.getElementById("Search-Bar").value;
 
   // console.log("Searched For: " + searchRequest);
@@ -180,7 +182,8 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
               // catch any errors
             });
     }
-  
+
+
     function drawWeather(d) {
       var celsius = Math.round(parseFloat(d.main.temp) - 273.15);
       var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
@@ -198,36 +201,47 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
       var condition = d.weather[0].id;
       console.log(condition); 
       if (condition >= 800 && condition <= 802) {
+        //document.getElementById('result').innerHTML = 'Prada Sunglasses';
         searchRequest = 'Prada Sunglasses';
         loadVids();
       } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
+        //document.getElementById('result').innerHTML = 'Betterbrella';
         searchRequest = 'Betterbrella';
         loadVids();
       } else if (condition == 611) {
+        //document.getElementById('result').innerHTML = 'Security Chain Company ZT741';
         searchRequest = 'Security Chain Company ZT741';
         loadVids();
       } else if (condition >= 600 && condition <= 602) {
+        //document.getElementById('result').innerHTML = 'North Face Jacket';
         searchRequest = 'North Face Jacket';
-        loadVids();
       } else if (condition >= 612 && condition <= 622) {
+        //document.getElementById('result').innerHTML = 'L.L. Bean Boots';
         searchRequest = 'L.L. Bean Boots';
         loadVids();
       } else if ((condition >= 210 && condition <= 221) || condition == 771 || condition == 781) {
+        //document.getElementById('result').innerHTML = 'Ready American Emergency Kit';
         searchRequest = 'Ready American Emergency Kit';
         loadVids();
       } else if (condition == 701 || condition == 741) {
+        //document.getElementById('result').innerHTML = 'Streamlight Strion';
         searchRequest = 'Streamlight Strion';
         loadVids();
       } else if (condition == 731 || condition == 751) {
+        //document.getElementById('result').innerHTML = 'Global Industrial Goggles';
         searchRequest = 'Global Industrial Goggles';
         loadVids();
       } else if (condition == 731 || condition == 751 || condition == 761 || condition == 762) {
+        //document.getElementById('result').innerHTML = '3M Half Facepiece Respirator';
         searchRequest = '3M Half Facepiece Respirator';
         loadVids();
       } else {
+        //document.getElementById('result').innerHTML = 'Unaccounted for condition';
         searchRequest = 'Unaccounted for condition';
+        loadVids();
       }
     }
+
 
 gapi.load("client");
