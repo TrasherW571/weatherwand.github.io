@@ -147,6 +147,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
                 //var search = document.getElementById("Search-Bar").value;
                 var search = searchRequest;
+                console.log("item to search on youtube: " + search);
                 options.q = search;
         $.getJSON(YTURL, options, function (data) {
                         console.log("here");
