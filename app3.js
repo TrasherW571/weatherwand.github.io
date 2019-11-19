@@ -151,7 +151,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
         $.getJSON(YTURL, options, function (data) {
                         console.log("here");
                         console.log(data);
-                    if ((search.replace(/\s/g, '').length) && (checkAmazon || checkEbay || checkEtsy)){
+                    if ((search) && (checkAmazon || checkEbay || checkEtsy)){
                         data.items.forEach(addVid);
                     }
 
