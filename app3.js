@@ -145,7 +145,8 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
                 var checkEbay = document.getElementById("eBay-Box").checked;
                 var checkEtsy = document.getElementById("Etsy-Box").checked;
 
-                var search = document.getElementById("Search-Bar").value;
+                //var search = document.getElementById("Search-Bar").value;
+                var search = searchRequest;
                 options.q = search;
         $.getJSON(YTURL, options, function (data) {
                         console.log("here");
@@ -183,7 +184,7 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
 
 
     function drawWeather(d) {
-      var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+      var celsius = Math.round(parseFloat(d.main.temp) - 273.15);
       var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
       var description = d.weather[0].description;
       cond = d.weather[0].id;
