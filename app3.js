@@ -137,7 +137,7 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
                 order: "relevance",
                 type: "video",
               	q: "",
-              	videoCategoryId: "26,27",
+              	videoCategoryId: "26",
                 key: YTkey
     }
 
