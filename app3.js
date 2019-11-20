@@ -127,7 +127,7 @@ function appendResultsToDocument(item, index) {
   }
 }
 
-var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
+var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
     var YTURL = "//www.googleapis.com/youtube/v3/search";
 
 
@@ -136,7 +136,8 @@ var YTkey = "AIzaSyCicnsvS9vq-YvKGPbmuKqPN_KnLyt91HI";
         maxResults: 2,
                 order: "relevance",
                 type: "video",
-              q: "",
+              	q: "",
+              	videoCategoryId: "26,27",
                 key: YTkey
     }
 
