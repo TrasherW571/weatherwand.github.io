@@ -202,7 +202,7 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
       var condition = d.weather[0].id;
       console.log(condition); 
       var temperature = d.main.temp;
-      console.log(temperature);
+      console.log("temp = " + temperature);
       //clear sky
       if (condition >= 800 && condition <= 802) {
         //document.getElementById('result').innerHTML = 'Prada Sunglasses';
