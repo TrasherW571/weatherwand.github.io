@@ -201,15 +201,27 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
     function getItem(d) {
       var condition = d.weather[0].id;
       console.log(condition); 
-      var temperature = d.main.temp;
+      var temperature = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
       console.log("temp = " + temperature);
       var currentTime = d.dt;
       var sunrise = d.sys.sunrise;
       var sunset = d.sys.sunset;
+      var isDay = false;
+      var isCold = false;
+      var isFreezing = false;
       console.log("time = " + currentTime + ", sunrise = " + sunrise + ", sunset = " + sunset);
       
-      if(currentTime >= sunrise && currentTime <= sunset){
+      if (currentTime >= sunrise && currentTime <= sunset){
         console.log("currently daytime");
+        isDay = true;
+      }
+      
+      if (temperature <= 50){
+        isCold = true;
+        console.log("it's currently under 50F");
+      } else if (temperature <= 32){
+        console.log("it's currently under 32F");
+        isFreezing = true;
       }
       
       //clear sky
