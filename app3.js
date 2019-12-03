@@ -205,15 +205,20 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
       console.log("temp = " + temperature);
       var currentTime = d.dt;
       var sunrise = d.sys.sunrise;
-      console.log("time = " + currentTime + ", sunrise = " + sunrise + ", sunset = " + sunset);
       var sunset = d.sys.sunset;
+      console.log("time = " + currentTime + ", sunrise = " + sunrise + ", sunset = " + sunset);
+      
       //clear sky
-      if (condition >= 800 && condition <= 802) {
+      if ((condition >= 800 && condition <= 802) && (currentTime >= sunrise && currentTime <= sunset)) {
         //document.getElementById('result').innerHTML = 'Prada Sunglasses';
         searchRequest = 'Prada Sunglasses';
         loadVids();
         //rain
-      } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
+      } 
+        else if((condition >= 800 && condition <= 802) && (currentTime <= sunrise && currentTime >= sunset)){
+        console.log("clear but dark);
+      }
+        else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
         //document.getElementById('result').innerHTML = 'Betterbrella';
         searchRequest = 'Betterbrella';
