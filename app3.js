@@ -218,12 +218,12 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
       
       if (temperature <= 32){
         isFreezing = true;
-        console.log("it's currently under 32F" + temperature);
+        console.log("it's currently under 32F: " + temperature);
       } else if (temperature <= 50){
-        console.log("it's currently under 50F" + temperature);
+        console.log("it's currently under 50: F" + temperature);
         isCold = true;
       } else{
-        console.log("it's currently over 50F" + temperature);
+        console.log("it's currently over 50F: " + temperature);
       }
       
       //clear sky
