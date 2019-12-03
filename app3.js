@@ -227,11 +227,17 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
       }
       
       //clear sky
-      if ((condition >= 800 && condition <= 802)) {
+      if ((condition >= 800 && condition <= 802) && isDay && !isCold) {
         //document.getElementById('result').innerHTML = 'Prada Sunglasses';
         searchRequest = 'Prada Sunglasses';
         loadVids();
         //rain
+      } else if ((condition >= 800 && condition <= 802) && isCold) {
+        searchRequest = 'North Face Sweatshirt';
+        loadVids();
+      } else if ((condition >= 800 && condition <= 802) && isFreezing) {
+        searchRequest = 'North Face Coat';
+        loadVids();
       } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
         //document.getElementById('result').innerHTML = 'Betterbrella';
