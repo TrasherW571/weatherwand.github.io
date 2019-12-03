@@ -208,6 +208,10 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
       var sunset = d.sys.sunset;
       console.log("time = " + currentTime + ", sunrise = " + sunrise + ", sunset = " + sunset);
       
+      if(currentTime >= sunrise && currentTime <= sunset){
+        console.log("currently daytime");
+      }
+      
       //clear sky
       if ((condition >= 800 && condition <= 802)) {
         //document.getElementById('result').innerHTML = 'Prada Sunglasses';
