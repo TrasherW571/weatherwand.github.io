@@ -119,7 +119,7 @@ function appendResultsToDocument(item, index) {
     node.setAttribute("id", spanId);
     node.setAttribute("class", 'URL');
     document.getElementById("search-results").appendChild(node);
-    document.getElementById(spanId).innerHTML += item.formattedUrl;
+    document.getElementById("search-results").innerHTML += item.formattedUrl;
     document.getElementById("search-results").innerHTML += "<br>";
     document.getElementById("search-results").innerHTML += item.snippet;
     document.getElementById("search-results").innerHTML += "<br>";
