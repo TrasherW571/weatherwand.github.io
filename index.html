@@ -30,10 +30,13 @@
       }
     </style>
     <!-- Function for clear the results box -->
-    <script>
+    <script type="text/javascript">
       function clearBox(elementID) {
         document.getElementById(elementID).innerHTML = "";
       }
+      $(window).load(function() {
+        $('#myModal').modal('show');
+      });
     </script>
   </head>
   <body>
@@ -42,11 +45,6 @@
     </header>
     
     <!-- Modal Instruction Alert -->
-    <script>
-      $(window).load(function() {
-        $('#myModal').modal('show');
-      });
-    </script>
     <div class="container">
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
