@@ -165,21 +165,31 @@ var YTURL = "//www.googleapis.com/youtube/v3/search";
     }
 
     function loadVids() {
-                var checkAmazon = document.getElementById("Amazon-Box").checked;
-                var checkEbay = document.getElementById("eBay-Box").checked;
-                var checkEtsy = document.getElementById("Etsy-Box").checked;
+        var checkAmazon = document.getElementById("Amazon-Box").checked;
+        var checkEbay = document.getElementById("eBay-Box").checked;
+        var checkEtsy = document.getElementById("Etsy-Box").checked;
 
-                //var search = document.getElementById("Search-Bar").value;
-                var search = firstRequest;
-                console.log("item to search on youtube: " + search);
-                options.q = search;
+        //var search = document.getElementById("Search-Bar").value;
+        var search = firstRequest;
+        console.log("item to search on youtube: " + search);
+        options.q = search;
         $.getJSON(YTURL, options, function (data) {
-                        console.log("here");
-                        console.log(data);
-                    if ((search) && (checkAmazon || checkEbay || checkEtsy)){
-                        data.items.forEach(addVid);
-                    }
-
+           console.log("here");
+           console.log(data);
+           if ((search) && (checkAmazon || checkEbay || checkEtsy)){
+               data.items.forEach(addVid);
+           }
+        });
+      
+      search = secondRequest;
+      console.log("item to search on youtube: " + search);
+        options.q = search;
+        $.getJSON(YTURL, options, function (data) {
+           console.log("here");
+           console.log(data);
+           if ((search) && (checkAmazon || checkEbay || checkEtsy)){
+               data.items.forEach(addVid);
+           }
         });
     }
 
