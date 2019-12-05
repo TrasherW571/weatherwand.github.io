@@ -151,7 +151,7 @@ function appendResultsToDocument(item, index) {
 }
 
 var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
-    var YTURL = "//www.googleapis.com/youtube/v3/search";
+var YTURL = "//www.googleapis.com/youtube/v3/search";
 
 
     var options = {
