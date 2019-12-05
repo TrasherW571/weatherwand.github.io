@@ -164,25 +164,14 @@ var YTURL = "//www.googleapis.com/youtube/v3/search";
                 key: YTkey
     }
 
-    function loadVids() {
+    function loadVids(videoRequest) {
         var checkAmazon = document.getElementById("Amazon-Box").checked;
         var checkEbay = document.getElementById("eBay-Box").checked;
         var checkEtsy = document.getElementById("Etsy-Box").checked;
 
         //var search = document.getElementById("Search-Bar").value;
-        var search = firstRequest;
+        var search = videoRequest;
         console.log("item to search on youtube: " + search);
-        options.q = search;
-        $.getJSON(YTURL, options, function (data) {
-           console.log("here");
-           console.log(data);
-           if ((search) && (checkAmazon || checkEbay || checkEtsy)){
-               data.items.forEach(addVid);
-           }
-        });
-      
-      search = secondRequest;
-      console.log("item to search on youtube: " + search);
         options.q = search;
         $.getJSON(YTURL, options, function (data) {
            console.log("here");
@@ -264,76 +253,89 @@ var YTURL = "//www.googleapis.com/youtube/v3/search";
         //document.getElementById('result').innerHTML = 'Prada Sunglasses';
         firstRequest = 'Prada Sunglasses';
         secondRequest = "Versace Sunglasses";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //rain
       } 
         else if ((condition >= 800 && condition <= 802) && !isDay && !isCold) {
         firstRequest = 'Streamlight Strion';
           secondRequest = "SureFire Flashlight";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
       }
         else if ((condition >= 800 && condition <= 802) && isCold) {
         firstRequest = 'North Face Sweatshirt';
         secondRequest = "Arc'Teryx Parka";  // change later
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
       } else if ((condition >= 800 && condition <= 802) && isFreezing) {
         firstRequest = 'North Face Coat';
         secondRequest = "Arc'Teryx Parka";  // change later
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
       } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
         //document.getElementById('result').innerHTML = 'Betterbrella';
         firstRequest = 'Betterbrella';
         secondRequest = "WindJammer Umbrella";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //sleet
       } else if (condition == 611) {
         //document.getElementById('result').innerHTML = 'Security Chain Company ZT741';
         firstRequest = 'Security Chain Company ZT741';
         secondRequest = "Cobra Cable Passenger Chain";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //snow
       } else if (condition >= 600 && condition <= 602) {
         //document.getElementById('result').innerHTML = 'North Face Jacket';
         firstRequest = 'North Face Jacket';
         secondRequest = "Arc'Teryx Parka";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //rain and snow
       } else if (condition >= 612 && condition <= 622) {
         //document.getElementById('result').innerHTML = 'L.L. Bean Boots';
         firstRequest = 'L.L. Bean Boots';
         secondRequest = "Asgard Ankle Rain Boots";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //tornado/squall
       } else if ((condition >= 210 && condition <= 221) || condition == 771 || condition == 781) {
         //document.getElementById('result').innerHTML = 'Ready American Emergency Kit';
         firstRequest = 'Ready American Emergency Kit';
         secondRequest = "Stealth Angel Emergency Kit";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //fog/mist
       } else if (condition == 701 || condition == 741) {
         //document.getElementById('result').innerHTML = 'Streamlight Strion';
         firstRequest = 'Streamlight Strion';
         secondRequest = "SureFire Flashlight";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //sand/dust
       } else if (condition == 721 || condition == 751) {
         //document.getElementById('result').innerHTML = 'Global Industrial Goggles';
         firstRequest = 'Global Industrial Goggles';
         secondRequest = "3M Goggles";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //smoke/smog
       } else if (condition == 731 || condition == 751 || condition == 761 || condition == 762) {
         //document.getElementById('result').innerHTML = '3M Half Facepiece Respirator';
         firstRequest = '3M Half Facepiece Respirator';
         secondRequest = "Industrial Safety Respirators";
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
         //unaccounted for
       } else {
         //document.getElementById('result').innerHTML = 'Unaccounted for condition';
         firstRequest = 'Unaccounted for condition';
         secondRequest = 'Unaccounted for condition';
-        loadVids();
+        loadVids(firstRequest);
+        loadVids(secondRequest);
       }
     }
 
