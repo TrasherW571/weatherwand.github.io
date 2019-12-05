@@ -274,7 +274,7 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
         searchRequest = 'Streamlight Strion';
         loadVids();
         //sand/dust
-      } else if (condition == 731 || condition == 751) {
+      } else if (condition == 721 || condition == 751) {
         //document.getElementById('result').innerHTML = 'Global Industrial Goggles';
         searchRequest = 'Global Industrial Goggles';
         loadVids();
