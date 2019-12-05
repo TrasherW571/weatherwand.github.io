@@ -2,7 +2,9 @@
 var spanId;
 var numOfResults;
 var resultCount;
-var searchRequest;
+var firstRequest;
+var secondRequest;
+var brandOneRequests;
 
 
 // Loads our Client
@@ -26,11 +28,6 @@ function executeSetUp() {
   var ebayCX = "012123320383898428184:rvjiwhzwqmm";
   var etsyCX = "012123320383898428184:hmfuaqhzbru";
 
-  // getting value from searchbar
-  //var searchRequest = document.getElementById("Search-Bar").value;
-
-  // console.log("Searched For: " + searchRequest);
-
   // checks for which sites are checked
   var checkAmazon = document.getElementById("Amazon-Box").checked;
   var checkEbay = document.getElementById("eBay-Box").checked;
@@ -44,41 +41,60 @@ function executeSetUp() {
   spanId = "s";
 
   // determines which set of requests we want to execute
-  if (searchRequest == "") {
+  if (firstRequest == "") {
     alert("Please enter something into the search bar");
   }
   else if (checkAmazon && checkEbay && checkEtsy) {
     numOfResults = 3;
-    executeRequest(amazonCX, spanId, searchRequest);
-    executeRequest(ebayCX, spanId, searchRequest);
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 3);
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 3);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 3);
+    
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 3);
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 3);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 3);
   }
   else if (selectAmazon_Ebay) {
     numOfResults = 5;
-    executeRequest(amazonCX, spanId, searchRequest);
-    executeRequest(ebayCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 2);
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 2);
+    
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 2);
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 2);
   }
   else if (selectAmazon_Etsy) {
     numOfResults = 5;
-    executeRequest(amazonCX, spanId, searchRequest);
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 2);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 2);
+    
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 2);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 2);
   }
   else if (selectEbay_Etsy) {
     numOfResults = 5;
-    executeRequest(ebayCX, spanId, searchRequest);
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 2);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 2);
+    
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 2);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 2);
   }
   else if (checkAmazon) {
     numOfResults = 10;
-    executeRequest(amazonCX, spanId, searchRequest);
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 1);
+    
+    executeRequest(amazonCX, spanId, firstRequest, secondRequest, 1);
   }
   else if (checkEbay) {
     numOfResults = 10;
-    executeRequest(ebayCX, spanId, searchRequest);
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 1);
+    
+    executeRequest(ebayCX, spanId, firstRequest, secondRequest, 1);
   }
   else if (checkEtsy) {
     numOfResults = 10;
-    executeRequest(etsyCX, spanId, searchRequest);
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 1);
+    
+    executeRequest(etsyCX, spanId, firstRequest, secondRequest, 1);
   }
   else {
     alert("Please select a store filter option");
@@ -87,7 +103,14 @@ function executeSetUp() {
 
 
 // Calls the CSE API to search for our request
-function executeRequest(cx, spanId, searchRequest) {
+function executeRequest(cx, spanId, brandOne, brandTwo, brandRequests) {
+  var searchRequest;
+  if(brandOneRequests > brandRequests) {
+    searchRequest = brandTwo;
+  }
+  else {
+    searchRequest = brandOne;
+  }
   var request = gapi.client.search.cse.list({
     "q": searchRequest,
     "cx": cx,
@@ -147,7 +170,7 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
                 var checkEtsy = document.getElementById("Etsy-Box").checked;
 
                 //var search = document.getElementById("Search-Bar").value;
-                var search = searchRequest;
+                var search = firstRequest;
                 console.log("item to search on youtube: " + search);
                 options.q = search;
         $.getJSON(YTURL, options, function (data) {
@@ -229,64 +252,77 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
       //clear sky
       if ((condition >= 800 && condition <= 802) && isDay && !isCold) {
         //document.getElementById('result').innerHTML = 'Prada Sunglasses';
-        searchRequest = 'Prada Sunglasses';
+        firstRequest = 'Prada Sunglasses';
+        secondRequest = "Versace Sunglasses";
         loadVids();
         //rain
       } 
         else if ((condition >= 800 && condition <= 802) && !isDay && !isCold) {
-        searchRequest = 'Streamlight Strion';
+        firstRequest = 'Streamlight Strion';
+          secondRequest = "SureFire Flashlight";
         loadVids();
       }
         else if ((condition >= 800 && condition <= 802) && isCold) {
-        searchRequest = 'North Face Sweatshirt';
+        firstRequest = 'North Face Sweatshirt';
+        secondRequest = "Arc'Teryx Parka";  // change later
         loadVids();
       } else if ((condition >= 800 && condition <= 802) && isFreezing) {
-        searchRequest = 'North Face Coat';
+        firstRequest = 'North Face Coat';
+        secondRequest = "Arc'Teryx Parka";  // change later
         loadVids();
       } else if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232) ||
         (condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 531) || (condition >= 803 && condition <= 804)) {
         //document.getElementById('result').innerHTML = 'Betterbrella';
-        searchRequest = 'Betterbrella';
+        firstRequest = 'Betterbrella';
+        secondRequest = "WindJammer Umbrella";
         loadVids();
         //sleet
       } else if (condition == 611) {
         //document.getElementById('result').innerHTML = 'Security Chain Company ZT741';
-        searchRequest = 'Security Chain Company ZT741';
+        firstRequest = 'Security Chain Company ZT741';
+        secondRequest = "Cobra Cable Passenger Chain";
         loadVids();
         //snow
       } else if (condition >= 600 && condition <= 602) {
         //document.getElementById('result').innerHTML = 'North Face Jacket';
-        searchRequest = 'North Face Jacket';
+        firstRequest = 'North Face Jacket';
+        secondRequest = "Arc'Teryx Parka";
         loadVids();
         //rain and snow
       } else if (condition >= 612 && condition <= 622) {
         //document.getElementById('result').innerHTML = 'L.L. Bean Boots';
-        searchRequest = 'L.L. Bean Boots';
+        firstRequest = 'L.L. Bean Boots';
+        secondRequest = "Asgard Ankle Rain Boots";
         loadVids();
         //tornado/squall
       } else if ((condition >= 210 && condition <= 221) || condition == 771 || condition == 781) {
         //document.getElementById('result').innerHTML = 'Ready American Emergency Kit';
-        searchRequest = 'Ready American Emergency Kit';
+        firstRequest = 'Ready American Emergency Kit';
+        secondRequest = "Stealth Angel Emergency Kit";
         loadVids();
         //fog/mist
       } else if (condition == 701 || condition == 741) {
         //document.getElementById('result').innerHTML = 'Streamlight Strion';
-        searchRequest = 'Streamlight Strion';
+        firstRequest = 'Streamlight Strion';
+        secondRequest = "SureFire Flashlight";
         loadVids();
         //sand/dust
       } else if (condition == 721 || condition == 751) {
         //document.getElementById('result').innerHTML = 'Global Industrial Goggles';
-        searchRequest = 'Global Industrial Goggles';
+        firstRequest = 'Global Industrial Goggles';
+        secondRequest = "3M Goggles";
         loadVids();
         //smoke/smog
       } else if (condition == 731 || condition == 751 || condition == 761 || condition == 762) {
         //document.getElementById('result').innerHTML = '3M Half Facepiece Respirator';
-        searchRequest = '3M Half Facepiece Respirator';
+        firstRequest = '3M Half Facepiece Respirator';
+        secondRequest = "Industrial Safety Respirators";
         loadVids();
         //unaccounted for
       } else {
         //document.getElementById('result').innerHTML = 'Unaccounted for condition';
-        searchRequest = 'Unaccounted for condition';
+        firstRequest = 'Unaccounted for condition';
+        secondRequest = 'Unaccounted for condition';
         loadVids();
       }
     }
