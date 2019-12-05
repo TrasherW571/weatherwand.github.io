@@ -232,7 +232,12 @@ var YTkey = "AIzaSyDWrWZSoDKwoOd8sLxYTXI7L0_h-DwoVFQ";
         searchRequest = 'Prada Sunglasses';
         loadVids();
         //rain
-      } else if ((condition >= 800 && condition <= 802) && isCold) {
+      } 
+        else if ((condition >= 800 && condition <= 802) && !isDay && !isCold) {
+        searchRequest = 'Streamlight Strion';
+        loadVids();
+      }
+        else if ((condition >= 800 && condition <= 802) && isCold) {
         searchRequest = 'North Face Sweatshirt';
         loadVids();
       } else if ((condition >= 800 && condition <= 802) && isFreezing) {
